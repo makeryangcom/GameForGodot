@@ -5,3 +5,5 @@
 .godot
 .editorconfig
 *.tmp
+engine/release/*
+!engine/release/.gitkeep
