@@ -11,7 +11,7 @@ extends StateBase
 ## 进入状态
 func enter() -> void:
 	super.enter()
-	print("[进入状态]:stand_idle_loop")
+	print("[state:enter]:stand_idle_loop")
 
 ## 帧渲染
 func process_update(_delta: float) -> void:
