@@ -13,7 +13,7 @@
 Your device should meet the following basic requirements.
 
 ```shell
-Godot: 4.3
+Godot: 4.4.dev3
 ```
 
 ## Install
