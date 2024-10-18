@@ -1,0 +1,18 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://tmjmlh3ksjqn"]
+
+[ext_resource type="Texture2D" uid="uid://dw2ku0exn7hjc" path="res://assets/textures/levels/001/ground_base.png" id="1_eiseu"]
+[ext_resource type="Texture2D" uid="uid://blu5hbr7xv3ho" path="res://assets/textures/levels/001/SM_Ground_WorldGridMaterial_MetallicRoughness.png" id="2_1qgdf"]
+[ext_resource type="Texture2D" uid="uid://dkh2602jxv2gy" path="res://assets/textures/levels/001/SM_Ground_WorldGridMaterial_Normal.png" id="3_rtfwh"]
+
+[resource]
+resource_name = "WorldGridMaterial"
+albedo_color = Color(0.99558, 0.99558, 0.99558, 1)
+albedo_texture = ExtResource("1_eiseu")
+metallic = 1.0
+metallic_texture = ExtResource("2_1qgdf")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_1qgdf")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_rtfwh")
+uv1_scale = Vector3(1880, 1880, 1880)

@@ -1,0 +1,23 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://xphbw0mp6l38"]
+
+[ext_resource type="Texture2D" uid="uid://806xmmtaxmqm" path="res://assets/textures/weapons/001/model_MI_Hammmer_BaseColor.png" id="1_rlquy"]
+[ext_resource type="Texture2D" uid="uid://cl5vfx5abv505" path="res://assets/textures/weapons/001/model_T_Hammer_ORM_Linear.png" id="2_t4ifh"]
+[ext_resource type="Texture2D" uid="uid://3igiw5ocpsso" path="res://assets/textures/weapons/001/model_MI_Hammmer_Emissive.png" id="3_ita13"]
+[ext_resource type="Texture2D" uid="uid://c35vj8ax0lrs" path="res://assets/textures/weapons/001/model_MI_Hammmer_MetallicRoughness.png" id="4_cck1g"]
+[ext_resource type="Texture2D" uid="uid://no7iacksmqem" path="res://assets/textures/weapons/001/model_MI_Hammmer_Normal.png" id="5_he4lu"]
+
+[resource]
+resource_name = "MI_Hammmer"
+albedo_texture = ExtResource("1_rlquy")
+metallic = 1.0
+metallic_texture = ExtResource("4_cck1g")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("4_cck1g")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_energy_multiplier = 50.0
+emission_texture = ExtResource("3_ita13")
+normal_enabled = true
+normal_texture = ExtResource("5_he4lu")
+ao_enabled = true
+ao_texture = ExtResource("2_t4ifh")
