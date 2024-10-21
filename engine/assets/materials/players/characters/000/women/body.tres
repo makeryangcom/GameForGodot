@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://cglq4hp6b20ye"]
+
+[ext_resource type="Texture2D" uid="uid://oosdwkon6ph1" path="res://assets/textures/players/characters/000/women/model_MI_Female_Body_BaseColor.png" id="1_nbfmy"]
+[ext_resource type="Texture2D" uid="uid://deo3b0xs4amtj" path="res://assets/textures/players/characters/000/women/model_MI_Female_Body_MetallicRoughness.png" id="2_8ld4j"]
+[ext_resource type="Texture2D" uid="uid://d3kpp6byvlrbt" path="res://assets/textures/players/characters/000/women/model_MI_Female_Body_Normal.png" id="3_2invg"]
+
+[resource]
+resource_name = "MI_Female_Body"
+transparency = 2
+alpha_scissor_threshold = 0.3333
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_nbfmy")
+metallic = 1.0
+metallic_texture = ExtResource("2_8ld4j")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_8ld4j")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_2invg")

@@ -16,7 +16,7 @@ class_name PlayerCamera extends Camera3D
 @export var arm_y_speed: float = 5 # 弹簧臂Y轴旋转速度
 
 @export_range(0, 80) var camera_min_limit_angle: float = 0 # 相机与地面的最小夹角角度
-@export_range(10, 80) var camera_max_limit_angle: float = 70 # 相机与地面的最大夹角角度
+@export_range(10, 85) var camera_max_limit_angle: float = 90 # 相机与地面的最大夹角角度
 
 @export var camera_distance: float = 7 # 相机的视距
 @export var camera_min_distance: float = 4 # 相机的最小视距

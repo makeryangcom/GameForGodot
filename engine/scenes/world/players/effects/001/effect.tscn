@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3mmq5kuoyvos"]
+
+[ext_resource type="Script" path="res://scripts/world/player/effect/effect.gd" id="1_0jqlx"]
+[ext_resource type="Texture2D" uid="uid://bv8kasoaw1b67" path="res://assets/textures/players/effects/001/T_cracks35.png" id="1_vwt4p"]
+[ext_resource type="Texture2D" uid="uid://co80x8i0ob36k" path="res://assets/textures/players/effects/001/T_cracks33_E3.jpg" id="2_fuo45"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1smai"]
+size = Vector2(100, 100)
+
+[sub_resource type="Animation" id="Animation_h66q3"]
+resource_name = "animation"
+length = 2.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main/Decal:emission_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i2m85"]
+_data = {
+&"animation": SubResource("Animation_h66q3")
+}
+
+[node name="001" type="Node3D"]
+script = ExtResource("1_0jqlx")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_1smai")
+
+[node name="Main" type="Sprite3D" parent="."]
+
+[node name="Decal" type="Decal" parent="Main"]
+size = Vector3(4, 0.1, 4)
+texture_albedo = ExtResource("1_vwt4p")
+texture_emission = ExtResource("2_fuo45")
+emission_energy = 0.0
+modulate = Color(0.607843, 0.756863, 0.952941, 1)
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i2m85")
+}

@@ -14,7 +14,7 @@ class_name World extends Node3D
 @export var is_player_loader: bool = false
 
 ## 场景预加载资源
-@onready var player_scene: PackedScene = preload("res://scenes/world/player/player.tscn")
+@onready var player_scene: PackedScene = preload("res://scenes/world/players/player.tscn")
 
 ## 准备就绪
 func _ready() -> void:
@@ -52,11 +52,11 @@ func on_server_loader_monster() -> void:
 
 ## 加载玩家资源函数
 func on_player_loader() -> void:
-	print("[world]:on_player_loader")
 	var map_path: String = Account.get_player_map_path({})
 	ResourceLoader.load_threaded_request(map_path)
 	var loader_status: ResourceLoader.ThreadLoadStatus = ResourceLoader.load_threaded_get_status(map_path, interface.loader_progress)
 	interface.loading_progress_bar.value = (interface.loader_progress[0] * 100)
+	print("[world]:on_player_loader", " ", interface.loading_progress_bar.value, "%")
 	if loader_status == ResourceLoader.THREAD_LOAD_LOADED:
 		is_player_loader = true
 		var map_scene: Node3D = load(map_path).instantiate()
