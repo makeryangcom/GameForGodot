@@ -10,7 +10,10 @@ var data = {
 	"version": ProjectSettings.get_setting("application/config/version"),
 	"mode": "",
 	"path": {
-		"map": "res://scenes/world/maps/"
+		"map": "res://scenes/world/maps/",
+		"player_body_model": "res://scenes/world/players/characters/",
+		"player_body_clothe": "res://scenes/world/players/clothes/",
+		"player_body_weapon": "res://scenes/world/players/weapons/"
 	}
 }
 
@@ -37,6 +40,18 @@ func is_server() -> bool:
 	if data["mode"] == "server":
 		server = true
 	return server
+
+## 获取玩家身体模型资源根路径
+func get_player_body_model_root_path() -> String:
+	return data["path"]["player_body_model"]
+
+## 获取玩家服饰模型资源根路径
+func get_player_body_clothe_root_path() -> String:
+	return data["path"]["player_body_clothe"]
+
+## 获取玩家武器模型资源根路径
+func get_player_body_weapon_root_path() -> String:
+	return data["path"]["player_body_weapon"]
 
 ## 获取地图资源根路径
 func get_map_root_path() -> String:

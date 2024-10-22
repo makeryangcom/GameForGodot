@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3qe77negmxe1"]
+[gd_scene load_steps=6 format=3 uid="uid://c3qe77negmxe1"]
 
+[ext_resource type="Script" path="res://scripts/world/player/character/character.gd" id="1_a2new"]
 [ext_resource type="ArrayMesh" uid="uid://b6hl6apothlld" path="res://assets/meshs/players/characters/000/men/mesh.tres" id="1_xmicb"]
-[ext_resource type="PackedScene" uid="uid://cpr0xtsr74k66" path="res://scenes/world/weapons/001/weapon.tscn" id="2_6l8mn"]
+[ext_resource type="PackedScene" uid="uid://cpr0xtsr74k66" path="res://scenes/world/players/weapons/001/weapon.tscn" id="2_6l8mn"]
 
 [sub_resource type="Skin" id="Skin_c8lwj"]
 resource_name = "Skin"
@@ -211,11 +212,12 @@ bind/67/name = &"ik_hand_r"
 bind/67/bone = -1
 bind/67/pose = Transform3D(0.687474, 0.576042, -0.442216, 0.387225, 0.224378, 0.894266, 0.614358, -0.786022, -0.0688038, -0.255378, -0.0282373, 1.22561)
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ccepk"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_8q154"]
 radius = 0.005
 height = 0.05
 
 [node name="Model" type="Node3D"]
+script = ExtResource("1_a2new")
 
 [node name="Mesh" type="Node3D" parent="."]
 
@@ -702,13 +704,15 @@ bones/67/scale = Vector3(1, 1, 1)
 mesh = ExtResource("1_xmicb")
 skin = SubResource("Skin_c8lwj")
 
-[node name="RightHand" type="BoneAttachment3D" parent="Mesh/Skeleton3D"]
+[node name="Attachment" type="BoneAttachment3D" parent="."]
 transform = Transform3D(-0.333952, -0.72464, -0.602804, 0.941657, -0.228037, -0.247549, 0.0419227, -0.650304, 0.758516, -0.278837, 1.03827, -0.35591)
 bone_name = "RightHand"
 bone_idx = 29
+use_external_skeleton = true
+external_skeleton = NodePath("../Mesh/Skeleton3D")
 
-[node name="Weapon" type="MeshInstance3D" parent="Mesh/Skeleton3D/RightHand"]
+[node name="Weapon" type="MeshInstance3D" parent="Attachment"]
 transform = Transform3D(-0.0219067, 0.99801, 0.0591486, -0.410817, -0.0629224, 0.909544, 0.911455, -0.00437474, 0.411378, 0.0379856, 0.0411275, 0.0990743)
-mesh = SubResource("CapsuleMesh_ccepk")
+mesh = SubResource("CapsuleMesh_8q154")
 
-[node name="001" parent="Mesh/Skeleton3D/RightHand/Weapon" instance=ExtResource("2_6l8mn")]
+[node name="001" parent="Attachment/Weapon" instance=ExtResource("2_6l8mn")]

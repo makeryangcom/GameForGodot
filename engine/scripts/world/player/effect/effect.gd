@@ -3,7 +3,7 @@
 # @site    www.makeryang.com
 #*****************************************************************************
 
-class_name Effect extends Node3D
+class_name PlayerEffect extends Node3D
 
 ## 场景资源
 @onready var effect: Effect = $"."

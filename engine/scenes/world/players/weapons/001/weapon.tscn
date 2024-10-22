@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpr0xtsr74k66"]
+
+[ext_resource type="ArrayMesh" uid="uid://bn3yb5jodrrgf" path="res://assets/meshs/weapons/001/mesh.tres" id="1_34q5l"]
+
+[node name="001" type="Node3D"]
+
+[node name="Model" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.153754, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Model"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, -0.2, 0)
+mesh = ExtResource("1_34q5l")
+skeleton = NodePath("")

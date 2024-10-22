@@ -9,6 +9,7 @@ class_name Player extends CharacterBody3D
 @onready var player: Player = $"."
 @onready var player_collision: CollisionShape3D = $Collision
 @onready var player_character: Node3D = $Character
+@onready var player_character_model: Node3D = $Character/Model
 @onready var player_camera_arm: SpringArm3D = $CameraArm
 @onready var player_camera: PlayerCamera = $CameraArm/Camera
 @onready var player_action_player: AnimationPlayer = $ActionPlayer
@@ -70,6 +71,7 @@ func _physics_process(_delta: float) -> void:
 		# 更新玩家朝向
 		if abs(velocity.x) + abs(velocity.z) > 0.1:
 			var player_current_direction = Vector2(velocity.z, velocity.x)
+			print(player_current_direction, player_current_direction.angle())
 			var target_quaternion: Quaternion = Quaternion.from_euler(Vector3(0, player_current_direction.angle(), 0))
 			player_character.quaternion = player_character.quaternion.slerp(target_quaternion, _delta * 10)
 		
