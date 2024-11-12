@@ -1,63 +1,100 @@
-[gd_scene load_steps=25 format=3 uid="uid://bjix7njo4yn5q"]
+[gd_scene load_steps=36 format=3 uid="uid://bjix7njo4yn5q"]
 
 [ext_resource type="Script" path="res://scripts/world/player/player.gd" id="1_oymro"]
 [ext_resource type="PackedScene" uid="uid://c3qe77negmxe1" path="res://scenes/world/players/characters/000/men.tscn" id="2_c5jrr"]
 [ext_resource type="Script" path="res://scripts/world/player/camera/camera.gd" id="5_4oo86"]
+[ext_resource type="Script" path="res://scripts/world/player/state/animations/idle.gd" id="5_b30u5"]
 [ext_resource type="Script" path="res://scripts/world/player/state/machine.gd" id="5_cwyba"]
-[ext_resource type="Script" path="res://scripts/world/player/state/animations/stand_idle_loop.gd" id="6_wsbk0"]
-[ext_resource type="Animation" uid="uid://1fdb0typb22b" path="res://assets/actions/players/characters/men/attack/attack_idle_loop.res" id="7_a1nu6"]
-[ext_resource type="Animation" uid="uid://bre5v1lmw7t62" path="res://assets/actions/players/characters/men/attack/attack_soar_down_chop.res" id="8_b0rel"]
-[ext_resource type="Animation" uid="uid://b3n0jsxkn5rui" path="res://assets/actions/players/characters/men/base/jump_forward_start_run_left_foot.res" id="9_fspj1"]
-[ext_resource type="Animation" uid="uid://c473xo13mnn3k" path="res://assets/actions/players/characters/men/base/jump_forward_start_stand_left_foot.res" id="10_muf6q"]
-[ext_resource type="Animation" uid="uid://cawl6ivfbnnnh" path="res://assets/actions/players/characters/men/base/jump_forward_start_walk_left_foot.res" id="11_7r8qy"]
-[ext_resource type="Animation" uid="uid://daq2bu3yelhqp" path="res://assets/actions/players/characters/men/base/run_forward_loop.res" id="12_fgw1y"]
-[ext_resource type="Animation" uid="uid://kqt2xsp2ve2t" path="res://assets/actions/players/characters/men/base/stand_idle_loop.res" id="13_hjq5d"]
-[ext_resource type="Animation" uid="uid://do2p5lrpdvfim" path="res://assets/actions/players/characters/men/base/walk_forward_loop.res" id="14_cyyon"]
-[ext_resource type="Animation" uid="uid://b5bsetxi3bqql" path="res://assets/actions/players/characters/men/flight/flight_hover_start.res" id="15_we2ah"]
-[ext_resource type="Animation" uid="uid://clm2uoy8judu0" path="res://assets/actions/players/characters/men/flight/flight_idle_loop.res" id="16_tfato"]
+[ext_resource type="Script" path="res://scripts/world/player/state/animations/walk.gd" id="6_llefj"]
+[ext_resource type="Script" path="res://scripts/world/player/state/animations/run.gd" id="7_sl2sr"]
+[ext_resource type="Script" path="res://scripts/world/player/state/animations/jump.gd" id="8_oh24n"]
+[ext_resource type="Script" path="res://scripts/world/player/state/animations/fall.gd" id="9_3gvhe"]
+[ext_resource type="Animation" uid="uid://k625lg5i303f" path="res://assets/actions/player/men/base/stand_idle.res" id="9_fsyne"]
+[ext_resource type="Script" path="res://scripts/world/player/state/base.gd" id="10_8ln7y"]
+[ext_resource type="Animation" uid="uid://dk0yds3yfnl2b" path="res://assets/actions/player/men/base/stand_to_jump_up.res" id="10_a8uh0"]
+[ext_resource type="Animation" uid="uid://b2h0bddtps141" path="res://assets/actions/player/men/base/stand_to_walk.res" id="11_5vwiu"]
+[ext_resource type="Animation" uid="uid://bmhur5c7eyfx3" path="res://assets/actions/player/men/base/stand_to_run.res" id="12_l8oxw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_t16k0"]
 height = 1.85
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_o7xvd"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8mr7o"]
 _data = {
-&"attack_soar_down_chop": ExtResource("8_b0rel"),
-&"attack_idle_loop": ExtResource("7_a1nu6")
+&"stand_idle": ExtResource("9_fsyne"),
+&"stand_to_jump_up": ExtResource("10_a8uh0"),
+&"stand_to_run": ExtResource("12_l8oxw"),
+&"stand_to_walk": ExtResource("11_5vwiu")
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qcnm7"]
-_data = {
-&"jump_forward_start_walk_left_foot": ExtResource("11_7r8qy"),
-&"stand_idle_loop": ExtResource("13_hjq5d"),
-&"jump_forward_start_stand_left_foot": ExtResource("10_muf6q"),
-&"walk_forward_loop": ExtResource("14_cyyon"),
-&"jump_forward_start_run_left_foot": ExtResource("9_fspj1"),
-&"run_forward_loop": ExtResource("12_fgw1y")
-}
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8sy3o"]
+animation = &"land/stand_idle"
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pksun"]
-_data = {
-&"flight_hover_start": ExtResource("15_we2ah"),
-&"flight_idle_loop": ExtResource("16_tfato")
-}
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3gvhe"]
+animation = &"land/stand_to_jump_up"
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p1weq"]
-animation = &"base/stand_idle_loop"
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8ln7y"]
+animation = &"land/stand_to_run"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e01q5"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_e1mmi"]
+animation = &"land/stand_to_walk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7vdt0"]
 advance_mode = 2
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_w8rfk"]
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5dvia"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n34hd"]
+xfade_time = 0.2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sf47w"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mqhlv"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qujho"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wi8m1"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4djbt"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oijek"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ocdnx"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vk5he"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yjj6t"]
+xfade_time = 0.1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jnphx"]
+xfade_time = 0.1
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_y220l"]
-states/base_stand_idle_loop/node = SubResource("AnimationNodeAnimation_p1weq")
-states/base_stand_idle_loop/position = Vector2(442, 100)
-transitions = ["Start", "base_stand_idle_loop", SubResource("AnimationNodeStateMachineTransition_e01q5"), "base_stand_idle_loop", "End", SubResource("AnimationNodeStateMachineTransition_w8rfk")]
+states/End/position = Vector2(978, 100)
+states/Idle/node = SubResource("AnimationNodeAnimation_8sy3o")
+states/Idle/position = Vector2(399, 100)
+states/Jump/node = SubResource("AnimationNodeAnimation_3gvhe")
+states/Jump/position = Vector2(796, 100)
+states/Run/node = SubResource("AnimationNodeAnimation_8ln7y")
+states/Run/position = Vector2(590, 239.222)
+states/Walk/node = SubResource("AnimationNodeAnimation_e1mmi")
+states/Walk/position = Vector2(590, -57.7783)
+transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_7vdt0"), "Walk", "Run", SubResource("AnimationNodeStateMachineTransition_5dvia"), "Run", "Walk", SubResource("AnimationNodeStateMachineTransition_n34hd"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_sf47w"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_mqhlv"), "Run", "Idle", SubResource("AnimationNodeStateMachineTransition_qujho"), "Idle", "Run", SubResource("AnimationNodeStateMachineTransition_wi8m1"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_4djbt"), "Jump", "Idle", SubResource("AnimationNodeStateMachineTransition_oijek"), "Jump", "Walk", SubResource("AnimationNodeStateMachineTransition_ocdnx"), "Walk", "Jump", SubResource("AnimationNodeStateMachineTransition_vk5he"), "Run", "Jump", SubResource("AnimationNodeStateMachineTransition_yjj6t"), "Jump", "Run", SubResource("AnimationNodeStateMachineTransition_jnphx")]
+graph_offset = Vector2(31, -128.778)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_kvc7e"]
+graph_offset = Vector2(-149.46, -54.4621)
 nodes/StateMachine/node = SubResource("AnimationNodeStateMachine_y220l")
-nodes/StateMachine/position = Vector2(260, 120)
-nodes/output/position = Vector2(640, 80)
+nodes/StateMachine/position = Vector2(200, 140)
+nodes/output/position = Vector2(620, 80)
 node_connections = [&"output", 0, &"StateMachine"]
 
 [node name="Player" type="CharacterBody3D"]
@@ -81,23 +118,37 @@ script = ExtResource("5_4oo86")
 
 [node name="StateMachine" type="Node3D" parent="." node_paths=PackedStringArray("state_base")]
 script = ExtResource("5_cwyba")
-state_base = NodePath("StandIdleLoop")
+state_base = NodePath("Idle")
 
-[node name="StandIdleLoop" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("player_node")]
-script = ExtResource("6_wsbk0")
+[node name="Idle" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("player_node")]
+script = ExtResource("5_b30u5")
 player_node = NodePath("../..")
+
+[node name="Walk" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("player_node")]
+script = ExtResource("6_llefj")
+player_node = NodePath("../..")
+
+[node name="Run" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("player_node")]
+script = ExtResource("7_sl2sr")
+player_node = NodePath("../..")
+
+[node name="Jump" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("player_node")]
+script = ExtResource("8_oh24n")
+player_node = NodePath("../..")
+
+[node name="Fall" type="Node3D" parent="StateMachine" node_paths=PackedStringArray("player_node")]
+script = ExtResource("9_3gvhe")
+player_node = NodePath("../..")
+metadata/_custom_type_script = ExtResource("10_8ln7y")
 
 [node name="ActionPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Character/Model")
 libraries = {
-&"base": SubResource("AnimationLibrary_qcnm7"),
-&"flight": SubResource("AnimationLibrary_pksun"),
-&"attack": SubResource("AnimationLibrary_o7xvd")
+&"land": SubResource("AnimationLibrary_8mr7o")
 }
-autoplay = "base/stand_idle_loop"
+autoplay = "land/stand_idle"
 
 [node name="ActionPlayerTree" type="AnimationTree" parent="."]
-active = false
 root_node = NodePath("../Character/Model")
 tree_root = SubResource("AnimationNodeBlendTree_kvc7e")
 anim_player = NodePath("../ActionPlayer")

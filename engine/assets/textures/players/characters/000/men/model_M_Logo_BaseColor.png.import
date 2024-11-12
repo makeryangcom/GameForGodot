@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bldb0c15y3e1j"
-path.s3tc="res://.godot/imported/model_M_UE4Man_ChestLogo_BaseColor.png-7833358e0d6e5c0a12f660ccdf59512b.s3tc.ctex"
+path.s3tc="res://.godot/imported/model_M_Logo_BaseColor.png-35462ce1b346065e7d8e400c5f221f54.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/textures/players/characters/000/men/model_M_UE4Man_ChestLogo_BaseColor.png"
-dest_files=["res://.godot/imported/model_M_UE4Man_ChestLogo_BaseColor.png-7833358e0d6e5c0a12f660ccdf59512b.s3tc.ctex"]
+source_file="res://assets/textures/players/characters/000/men/model_M_Logo_BaseColor.png"
+dest_files=["res://.godot/imported/model_M_Logo_BaseColor.png-35462ce1b346065e7d8e400c5f221f54.s3tc.ctex"]
 
 [params]
 

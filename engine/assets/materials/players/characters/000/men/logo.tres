@@ -1,14 +1,13 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://d2i4jvqf7dapk"]
 
-[ext_resource type="Texture2D" uid="uid://bldb0c15y3e1j" path="res://assets/textures/players/characters/000/men/model_M_UE4Man_ChestLogo_BaseColor.png" id="1_5q4f5"]
-[ext_resource type="Texture2D" uid="uid://yorfmrlm7ro6" path="res://assets/textures/players/characters/000/men/model_M_UE4Man_ChestLogo_Normal.png" id="2_xrgx6"]
+[ext_resource type="Texture2D" uid="uid://bldb0c15y3e1j" path="res://assets/textures/players/characters/000/men/model_M_Logo_BaseColor.png" id="1_5q4f5"]
+[ext_resource type="Texture2D" uid="uid://yorfmrlm7ro6" path="res://assets/textures/players/characters/000/men/model_M_Logo_Normal.png" id="2_xrgx6"]
 
 [resource]
 resource_name = "M_UE4Man_ChestLogo"
 transparency = 2
-alpha_scissor_threshold = 0.333
+alpha_scissor_threshold = 1.0
 alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("1_5q4f5")
-roughness = 0.0980392
 normal_enabled = true
 normal_texture = ExtResource("2_xrgx6")

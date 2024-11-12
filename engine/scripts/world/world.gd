@@ -65,6 +65,7 @@ func on_player_loader() -> void:
 		# 玩家节点处理
 		var player_node: Player = player_scene.instantiate()
 		player_node.name = Account.get_player_token({})
+		player_node.player_data = Account.get_player()
 		# 玩家身体模型节点处理
 		var body_model_path: String = Account.get_player_body_model_path({})
 		var body_model_scene: Node3D = load(body_model_path).instantiate()

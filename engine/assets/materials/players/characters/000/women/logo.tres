@@ -1,7 +1,7 @@
 [gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://sxmuo0yfh4l"]
 
-[ext_resource type="Texture2D" uid="uid://bcd61kke7pcd7" path="res://assets/textures/players/characters/000/women/model_M_UE4Man_ChestLogo_BaseColor.png" id="1_qxjt7"]
-[ext_resource type="Texture2D" uid="uid://bbd4sxcli47qe" path="res://assets/textures/players/characters/000/women/model_M_UE4Man_ChestLogo_Normal.png" id="2_f3twu"]
+[ext_resource type="Texture2D" uid="uid://bcd61kke7pcd7" path="res://assets/textures/players/characters/000/women/model_M_Logo_BaseColor.png" id="1_qxjt7"]
+[ext_resource type="Texture2D" uid="uid://bbd4sxcli47qe" path="res://assets/textures/players/characters/000/women/model_M_Logo_Normal.png" id="2_f3twu"]
 
 [resource]
 resource_name = "M_UE4Man_ChestLogo"

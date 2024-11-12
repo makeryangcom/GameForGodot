@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcd61kke7pcd7"
-path.s3tc="res://.godot/imported/model_M_UE4Man_ChestLogo_BaseColor.png-79964bf9ee085cabecd20e4f75fca9f9.s3tc.ctex"
+uid="uid://yorfmrlm7ro6"
+path.s3tc="res://.godot/imported/model_M_Logo_Normal.png-6a9f9aa616fdf53987719cf80d1c9323.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d374b84037e1ba89cc57ca52d00c6d6c"
+"md5": "051fcc23e9e09507648a8165549c60a0"
 }
 
 [deps]
 
-source_file="res://assets/textures/players/characters/000/women/model_M_UE4Man_ChestLogo_BaseColor.png"
-dest_files=["res://.godot/imported/model_M_UE4Man_ChestLogo_BaseColor.png-79964bf9ee085cabecd20e4f75fca9f9.s3tc.ctex"]
+source_file="res://assets/textures/players/characters/000/men/model_M_Logo_Normal.png"
+dest_files=["res://.godot/imported/model_M_Logo_Normal.png-6a9f9aa616fdf53987719cf80d1c9323.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +23,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://assets/textures/players/000/men/model_M_UE4Man_ChestLogo_Normal.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false

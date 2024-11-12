@@ -11,7 +11,7 @@ var data = {
 	"player": {
 		"token": "test123456", # 玩家Token
 		"nickname": "小小战士", # 玩家昵称
-		"gender": "men", # 玩家性别，可选值men、women
+		"gender": "women", # 玩家性别，可选值men、women
 		"career": "warrior", # 玩家职业，可选值warrior、magician、taoist
 		"asset": {
 			"balance": "0.00", # 玩家账户余额
@@ -37,7 +37,7 @@ var data = {
 				"name": "无", # 玩家服饰名称
 			},
 			"weapon": {
-				"id": "000", # 玩家武器编号
+				"id": "001", # 玩家武器编号
 				"name": "无", # 玩家武器名称
 			},
 		},

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbd4sxcli47qe"
-path.s3tc="res://.godot/imported/model_M_UE4Man_ChestLogo_Normal.png-3466d9d095e2fd4705b17698bfe6e60b.s3tc.ctex"
+path.s3tc="res://.godot/imported/model_M_Logo_Normal.png-eb82062f0d381eaa99a181656f766d93.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/textures/players/characters/000/women/model_M_UE4Man_ChestLogo_Normal.png"
-dest_files=["res://.godot/imported/model_M_UE4Man_ChestLogo_Normal.png-3466d9d095e2fd4705b17698bfe6e60b.s3tc.ctex"]
+source_file="res://assets/textures/players/characters/000/women/model_M_Logo_Normal.png"
+dest_files=["res://.godot/imported/model_M_Logo_Normal.png-eb82062f0d381eaa99a181656f766d93.s3tc.ctex"]
 
 [params]
 
